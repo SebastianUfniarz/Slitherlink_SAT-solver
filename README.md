@@ -60,12 +60,12 @@ Boards are saved in a simple text format where:
 - `.` denotes an empty cell (no clue),  
 - digits `0` to `3` specify the required number of edges around that cell.
 
-Example:
-.....
-.1...
-..1..
-.....
-.....
+Example: <br>
+..... <br>
+.1... <br>
+..1.. <br>
+..... <br>
+..... <br>
 
 ## Project structure
 
