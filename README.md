@@ -40,7 +40,8 @@ No double edges: An edge can only be used once as part of the loop.
 ---
 
 ## Usage
-<img src="application.png" alt="Application screenshot" width="500"/>
+<img src="application.png" alt="Application screenshot" width="1000"/>
+
 - **Generate a board**  
   Enter the board width, height, then click "Generate" (you can change density in the on_generate_click function).
 
