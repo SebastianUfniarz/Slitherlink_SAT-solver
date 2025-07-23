@@ -2,13 +2,20 @@
 
 Slitherlink Solver is a desktop application for solving and generating the Slitherlink logic puzzle. The program allows creating boards, manually marking edges, automatically solving using a SAT solver, and visualizing the results.
 
+Slitherlink is a logic puzzle game in which the goal is to create a loop on a grid according to specific rules. Here are the main rules of the game:
+Grid: The game is played on a grid composed of empty cells, edges, and numbers on some of the cells. It is usually a square grid, e.g., 6x6.
+Numbers in the cells: Some cells contain numbers (from 0 to 3). A number indicates how many of the edges surrounding that cell must be part of the loop.
+The loop: The objective is to draw a single closed and continuous loop on the grid, using the edges in such a way that it satisfies the conditions given by the numbers in the cells.
+No crossing or branching: The loop cannot cross itself or branch off in multiple directions.
+No double edges: An edge can only be used once as part of the loop.
+
 ---
 
 ## Prerequisites
 
-- Python 3.10 or higher  
-- Lingeling SAT solver (available in your system PATH)  
-- `tkinter` library (included in standard Python installations)  
+- Python 3.10.11  
+- Lingeling SAT solver 1.8.dev14 should be working with higher versions.
+- `tkinter` library 8.6.12
 - Access to terminal / console  
 
 ---
@@ -22,7 +29,7 @@ Slitherlink Solver is a desktop application for solving and generating the Slith
      ```
 
 2. **Install Lingeling solver**  
-   - Download Lingeling from the official website and place it in a directory accessible from your terminal.
+   - Download Lingeling SAT-solver.
 
 3. **Run the application**  
    - In the project directory run:
@@ -35,10 +42,16 @@ Slitherlink Solver is a desktop application for solving and generating the Slith
 ## Usage
 
 - **Generate a board**  
-  Enter the board width, height, and clue density percentage in the GUI, then click "Generate".
+  Enter the board width, height, then click "Generate" (you can change density in the on_generate_click function).
 
 - **Load board from file**  
-  Click "Load from File" and select a text file containing the board.
+   The input file shown in the example below is based on a rectangular grid, where each dot (.) represents a single cell on the board. Numerical values from 0 to 3 indicate the number of edges that should surround the given cell, in accordance with the rules of the Slitherlink puzzle. A dot (.) signifies the absence of a number, meaning the cell has no enforced constraint. Each line in the text file corresponds to one row of the board, and similarly, the columns in the file represent the respective columns of the board.
+Example: <br>
+..... <br>
+.1... <br>
+..1.. <br>
+..... <br>
+..... <br>
 
 - **Manually mark edges**  
   Click on edges between dots to toggle them on or off.
@@ -53,19 +66,6 @@ Slitherlink Solver is a desktop application for solving and generating the Slith
   Click "Reset" to clear all markings.
 
 ---
-
-## Board file format
-
-Boards are saved in a simple text format where:  
-- `.` denotes an empty cell (no clue),  
-- digits `0` to `3` specify the required number of edges around that cell.
-
-Example: <br>
-..... <br>
-.1... <br>
-..1.. <br>
-..... <br>
-..... <br>
 
 ## Project structure
 
